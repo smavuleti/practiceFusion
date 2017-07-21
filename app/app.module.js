@@ -1,4 +1,5 @@
-    var app= angular.module("myApp",[
+
+var app= angular.module("myApp",[
                                                     'mySimilarDoctorAppRouter',
                                                     'mySimilarDoctorsListCtrl',
                                                     'mySimilarDoctorsListCtrlService'

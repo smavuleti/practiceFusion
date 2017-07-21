@@ -57,11 +57,10 @@ var doctor =[
     }
 
 ];
-        var service ={};
-   
-    service.getData= function(){
-        return doctor;
-    }
-    
-    return service;
+var service ={};
+service.getData= function(){
+    return doctor;
+}
+
+return service;
 });

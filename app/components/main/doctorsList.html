@@ -1,47 +1,54 @@
+<!-- App Main Page which contains- 
+       the list of doctors, details of the doctor (with similar specialization)-->
+
+
 <div class="container-fluid">
-   <div class="row row-content" ng-controller ="doctorsListCtrl as docListCtrl">
-       
-    
-           <div class="col-xs-12 col-sm-4 col-md-4">
-           <div class="table-responsive">
-           <table class="table table-striped">
-               <tbody>
-                   <tr ng-repeat="doctor in docListCtrl.doctorList ">
-                       <td> <a ng-click="displayDetails(doctor,$index); getSimilarDoctorList(doctor.firstName, doctor.specialization)">
-                          <span class="doctorName"> {{doctor.firstName}}  {{doctor.lastName}}</span> 
-                           <span class="doctorSpecialization">{{doctor.specialization}} </span>
-                           <span class="badge doctorRating"> {{doctor.rating}} </span>
-                            </a></td>
-                   </tr>
-               </tbody>
-           </table>
-       </div>
-       </div>
-       
-       <div class="col-xs-12 col-sm-4 col-md-7">
-           <div id="displayDoctorDetails">
-         <h3> {{selectedDoctor.firstName}} {{selectedDoctor.lastName}}</h3>
-<h5> {{selectedDoctor.area}}</h5> <h6> {{selectedDoctor.contactNo}} </h6>
-                   
-                            <span class="doctorDescription">
-                                  {{selectedDoctor.description}}
-                       </span>
-                           
-           </div>
-           
-           <table class="table table-inverse">
-               <tbody>
-                   <tr ng-repeat="doctor in filteredList | orderBy: '-rating'">
-                       <td> 
-                           <a ng-click="displayDetails(doctor,$index); getSimilarDoctorList(doctor.firstName,doctor.specialization)">
-                            
-                           
-                          <h3> {{doctor.firstName}}  {{doctor.lastName}}  </h3>
-                           </a></td> 
-                   </tr>
-               </tbody>
-           </table>
-       </div>
-       
+ <div class="row row-content" ng-controller ="doctorsListCtrl as docListCtrl">
+   
+  <!-- Left side of the page bootstrap grid: displays the Doctors List with Doctor's Full Name, Specialization, and Rating (in number)-->
+   <div class="col-xs-12 col-sm-4 col-md-4">
+     <div class="table-responsive">
+       <table class="table table-striped">
+         <tbody>
+           <tr ng-repeat="doctor in docListCtrl.doctorList ">
+               <!-- here, two methods are used:  displayDetails(doctor,$index), getSimilarDoctorList(doctor.firstName, doctor.specialization)
+                    to display the details of the selected doctors and get the similar doctor names-->       
+             <td> <a ng-click="displayDetails(doctor,$index); getSimilarDoctorList(doctor.firstName, doctor.specialization)">
+              <span class="doctorName"> {{doctor.firstName}}  {{doctor.lastName}}</span> 
+              <span class="doctorSpecialization">{{doctor.specialization}} </span>
+              <span class="badge doctorRating"> {{doctor.rating}} </span>
+            </a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+  
+<!-- center of the page: displays the details and similar doctor names
+*******(categorized by Specialization and sorted by ratings)*******-->
+  <div class="col-xs-12 col-sm-4 col-md-7">
+   <div id="displayDoctorDetails">
+     <h3> {{selectedDoctor.firstName}} {{selectedDoctor.lastName}}</h3>
+     <h5> {{selectedDoctor.area}}</h5> <h6> {{selectedDoctor.contactNo}} </h6>
+     
+     <span class="doctorDescription">
+      {{selectedDoctor.description}}
+    </span>
+    
+  </div>
+  
+  <table class="table table-inverse">
+   <tbody>
+      <!-- *******(categorizing by Specialization and sorting by ratings)*******-->
+     <tr ng-repeat="doctor in filteredList | orderBy: '-rating'">
+       <td> 
+         <a ng-click="displayDetails(doctor,$index); getSimilarDoctorList(doctor.firstName,doctor.specialization)">
+          <h3> {{doctor.firstName}}  {{doctor.lastName}}  </h3>
+        </a></td> 
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
 </div>
