@@ -1,0 +1,47 @@
+
+<!Doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Doctors</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="sruthi mavuleti">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Customized CSS-->
+    <link href="css/mystyles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+</head>
+
+
+<body>
+    <header class="jumbotron">
+        <div class = "container">
+            <div class = "row row-header">
+                <div class="col-xs-12 col-sm-12">
+                    <h1>List Of Doctors</h1>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Angular Templates -->
+    <div ui-view></div>
+
+    <!-- Angular modules-->
+    <script type="text/javascript" src="app.module.js"></script>    
+    <script type="text/javascript" src="app.routes.js"></script>
+    <script type="text/javascript" src="components/main/doctorsListCtrl.js"></script>
+    <script type="text/javascript" src="components/main/doctorsListService.js"></script>
+    
+</body>
+
+
+</html>
