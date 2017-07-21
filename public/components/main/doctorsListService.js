@@ -44,7 +44,7 @@ var doctor =[
        specialization: 'Dermatologist',
         area: 'Hayward',
         contactNo: '(123)-240-3219',
-        description:'I completed all training required for both Internal Medicine and Dermatology.  I am board certified in both fields, although I practice only dermatology. I recently recertified in dermatology as part of my commitment to remaining up-to-date in my field. '
+        description:'I was born and raised in the Texas. I graduated from the University of the Texas School of Medicine, and did my Internal Medicine residency and Cardiovascular fellowship training at Rush-Presbyterian- Medical Center in Chicago, Illinois'
     },
     {
         firstName:'Jaime',
